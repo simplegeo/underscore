@@ -1,3 +1,9 @@
+nodejs-underscore (1.1.2-0sg3) UNRELEASED; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 26 Oct 2010 00:00:31 +0000
+
 nodejs-underscore (1.1.2-0sg0) unstable; urgency=low
 
   * Debianized
