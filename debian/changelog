@@ -1,3 +1,60 @@
+nodejs-underscore (1.1.2-0sg11) UNRELEASED; urgency=low
+
+  [ Jeremy Ashkenas ]
+  * removing now unused propertyIsEnumerable reference.
+
+  [ Benjamin Kudria ]
+  * Fix (grammar) typo.
+
+  [ Elliot Winkler ]
+  * Fix reduce() so that if you don't pass in an initial value, the
+    first item in the collection is used
+  * Fix reduceRight() so that if you don't pass in an initial value, the
+    last item in the collection is used
+
+  [ Jeremy Ashkenas ]
+  * Tweaks to Issue #53
+  * Merging in Issue #54
+
+  [ summatix ]
+  * Added index file for Node.JS
+
+  [ Jeremy Ashkenas ]
+  * Adding header + version number to -min.js
+
+  [ Jason Davies ]
+  * Preserve backslashes in _.template() For example, templates
+    containing things like the literal string `\ribbit` weren't being
+    escaped properly when being compiled. The `\r` was being interpreted
+    as a carriage return character. I've added a test for this too, and
+    all the existing tests pass.
+
+  [ Jeremy Ashkenas ]
+  * Adding help info to the homepage.
+
+  [ Jason Davies ]
+  * Fix spelling: occurence -> occurrence
+
+  [ Joshua Peek ]
+  * Export _ object as the entire module
+
+  [ Jeremy Ashkenas ]
+  * Initial draft of _.throttle and _.debounce
+  * Merging in a patch for _ = require('underscore')
+  * Tweaking README ... linking to contributors.
+  * Safer CommonJS detection... module.exports must be defined.
+  * removing an errant a.
+  * Better Underscore isType checking, in the presence of Internet
+    Explorer host objects, which are a bit touchy.
+  * Issue #70 -- implementing each, find, all, any, etc. without the use
+    of a try/catch/throw. Minor speedup + avoids destroying the stack
+    trace.
+  * Underscore.js 1.1.3
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 07 Jan 2011 01:15:31 +0000
+
 nodejs-underscore (1.1.2-0sg10) UNRELEASED; urgency=low
 
   * UNRELEASED
