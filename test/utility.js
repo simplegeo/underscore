@@ -15,15 +15,6 @@ $(document).ready(function() {
     equals(_.identity(moe), moe, 'moe is the same as his identity');
   });
 
-  test('utility: breakLoop', function() {
-    var result = null;
-    _([1,2,3,4,5,6]).each(function(num) {
-      result = num;
-      if (num == 3) _.breakLoop();
-    });
-    equals(result, 3, 'broke out of a loop');
-  });
-
   test("utility: uniqueId", function() {
     var ids = [], i = 0;
     while(i++ < 100) ids.push(_.uniqueId());
@@ -54,6 +45,9 @@ $(document).ready(function() {
     var basicTemplate = _.template("<%= thing %> is gettin' on my noives!");
     var result = basicTemplate({thing : 'This'});
     equals(result, "This is gettin' on my noives!", 'can do basic attribute interpolation');
+
+    var backslashTemplate = _.template("<%= thing %> is \\ridanculous");
+    equals(backslashTemplate({thing: 'This'}), "This is \\ridanculous");
 
     var fancyTemplate = _.template("<ul><% \
       for (key in people) { \
