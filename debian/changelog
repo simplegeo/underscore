@@ -1,3 +1,9 @@
+nodejs-underscore (1.1.4-0sg0) unstable; urgency=low
+
+  * New upstream release
+
+ -- Wade Simmons <wade@simplegeo.com>  Thu, 20 Jan 2011 03:15:25 +0000
+
 nodejs-underscore (1.1.3-0sg12) UNRELEASED; urgency=low
 
   * UNRELEASED
