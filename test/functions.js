@@ -70,13 +70,13 @@ $(document).ready(function() {
   asyncTest("functions: throttle", 1, function() {
     var counter = 0;
     var incr = function(){ counter++; };
-    var throttledIncr = _.throttle(incr, 50);
+    var throttledIncr = _.throttle(incr, 100);
     throttledIncr(); throttledIncr(); throttledIncr();
-    setTimeout(throttledIncr, 60);
-    setTimeout(throttledIncr, 70);
-    setTimeout(throttledIncr, 110);
     setTimeout(throttledIncr, 120);
-    _.delay(function(){ ok(counter == 3, "incr was throttled"); start(); }, 200);
+    setTimeout(throttledIncr, 140);
+    setTimeout(throttledIncr, 220);
+    setTimeout(throttledIncr, 240);
+    _.delay(function(){ ok(counter == 3, "incr was throttled"); start(); }, 400);
   });
 
   asyncTest("functions: debounce", 1, function() {
@@ -96,6 +96,11 @@ $(document).ready(function() {
     var greet = function(name){ return "hi: " + name; };
     var backwards = _.wrap(greet, function(func, name){ return func(name) + ' ' + name.split('').reverse().join(''); });
     equals(backwards('moe'), 'hi: moe eom', 'wrapped the saluation function');
+
+    var inner = function(){ return "Hello "; };
+    var obj   = {name : "Moe"};
+    obj.hi    = _.wrap(inner, function(fn){ return fn() + this.name; });
+    equals(obj.hi(), "Hello Moe");
   });
 
   test("functions: compose", function() {
